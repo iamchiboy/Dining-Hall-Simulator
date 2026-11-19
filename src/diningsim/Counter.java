@@ -1,4 +1,4 @@
 package diningsim;
 
-public class Counter {
+public abstract class Counter {
 }
