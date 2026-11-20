@@ -31,6 +31,23 @@ public class Simulation {
 
     }
 
+    //method to start the simulation
+    public void startSimulation(){
+        simulationRunning = true;
+    }
+
+    //stop simulation
+    public void stopSimulation(){
+        simulationRunning = false;
+    }
+
+    //check simulation status
+    public boolean isRunning(){
+        return simulationRunning;
+    }
+
+
+
 
 
 }
