@@ -10,5 +10,27 @@ package diningsim;
  * The window adds the STU- part.
  */
 
+import java.util.Map;
+
 public class Student {
+
+    private String StudentId;
+    private String name;
+
+    public Student(String studentId, String name){
+        if( studentId == null){
+            throw new IllegalArgumentException("Student ID is required");
+        }
+        if(!studentId.startsWith("STU-")){
+            throw new IllegalArgumentException("Student Id must start with STU-");
+        }
+
+        String digits = studentId.substring(4);
+        if(digits.length() != 8 || !digits.matches("[0-9]+")){
+            throw new IllegalArgumentException("Student Id must be STU- and followed by 8 digits (0-9)");
+        }
+
+        this.StudentId =studentId;
+        this.name = name;
+    }
 }
