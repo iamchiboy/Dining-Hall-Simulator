@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class Student {
 
-    private String StudentId;
+    private String studentId;
     private String name;
 
     public Student(String studentId, String name){
@@ -30,7 +30,19 @@ public class Student {
             throw new IllegalArgumentException("Student Id must be STU- and followed by 8 digits (0-9)");
         }
 
-        this.StudentId =studentId;
+        this.studentId =studentId;
         this.name = name;
     }
+
+
+    //a student can place an order
+    // this method takes the item in key value pair i.e the MenuItem and quantity
+    // this is where the Order object is created
+    public Order placeOrder(Map<MenuItem, Integer> items){
+        String orderId = "ORD-" + studentId;
+        return new Order(orderId,this, items);
+    }
+
+
+
 }
