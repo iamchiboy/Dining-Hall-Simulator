@@ -55,8 +55,23 @@ public class Simulation {
 
         Order order = student.placeOrder(items);
         //submitOrder
+        submitOrder(order);
         return order;
 
+    }
+
+
+    public void submitOrder(Order order){
+        String id = order.getStudent().getStudentId();
+
+        //students with unfinished orders can not order again unless when done
+        if(activeStudentIds.contains(id)){
+            throw new IllegalArgumentException("Student" + id + " already has an order\n" +
+                    "in a queue. Wait until it is finished.");}
+
+        //puts an order at the back of the queue of the counter it needs now
+        queueManager.routeOrder(order, clock);
+        activeStudentIds.add(id);
 
     }
 
