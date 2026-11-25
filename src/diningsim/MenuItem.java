@@ -50,4 +50,9 @@ public void setPrice(double price) {
    public double getCostFor(int quantity) {
         return price * quantity;
     } 
-}
+
+    public String toString() {
+        return name + " (" + category + ")";
+    }
+    }
+
