@@ -10,4 +10,7 @@ public class Constants {
     public static final String MEALS = "Meals";
     public static final String DRINKS = "Drinks";
     public static final String PASTRIES = "Pastries";
+
+    //An array to hold ther three counter names. It helps when we will want to loop thriugh each counter.
+public static final String[] CATEGORIES = { MEALS, DRINKS, PASTRIES };    
 }
