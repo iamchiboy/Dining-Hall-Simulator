@@ -19,7 +19,10 @@ public static final int TICK_MILLIS = 1000;
 
 // Service rate
 public static final int MEALS_RATE = 5;
-    public static final int DRINKS_RATE = 1;
-    public static final int PASTRIES_RATE = 2;
+public static final int DRINKS_RATE = 1;
+public static final int PASTRIES_RATE = 2;
 
+    //The quantity a student can pick from one item.
+public static final int MIN_QUANTITY = 1;
+public static final int MAX_QUANTITY = 10;  
 }
