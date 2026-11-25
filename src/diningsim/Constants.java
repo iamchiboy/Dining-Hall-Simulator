@@ -16,4 +16,10 @@ public static final String[] CATEGORIES = { MEALS, DRINKS, PASTRIES };
 
 //How long a minute lasts on the creen in miliseconds.
 public static final int TICK_MILLIS = 1000;
+
+// Service rate
+public static final int MEALS_RATE = 5;
+    public static final int DRINKS_RATE = 1;
+    public static final int PASTRIES_RATE = 2;
+
 }
