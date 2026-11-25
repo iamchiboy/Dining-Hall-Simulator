@@ -83,6 +83,32 @@ public class Simulation {
         finishServices();
     }
 
+    //calls each counter to serve the student in front of their queue
+    private void startServices(){
+        for(Counter counter: queueManager.getAllCounters()){
+            counter.serveNextOrder(clock);
+        }
+    }
+
+    //
+    private void finishServices(){
+        for(Counter counter: queueManager.getAllCounters()){
+            Order done = counter.workOneMinute(); //returns null if order is not finished
+            if (done == null){continue;}
+            boolean hasMore = queueManager.moveToNextCounter(done,clock);
+            if (!hasMore){
+                totalStudentsServed++;
+                activeStudentIds.remove(done.getStudent().getStudentId());
+
+            }
+
+        }
+
+
+    }
+
+
+
 
 
 
