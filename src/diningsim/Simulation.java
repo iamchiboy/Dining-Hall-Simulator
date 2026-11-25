@@ -75,6 +75,14 @@ public class Simulation {
 
     }
 
+    //moves the simulation forward by 1 minute
+    public void tick(){
+        if (!simulationRunning){return;}
+        startServices();
+        clock++;
+        finishServices();
+    }
+
 
 
 
