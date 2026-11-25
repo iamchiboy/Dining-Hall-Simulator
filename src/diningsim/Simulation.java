@@ -83,7 +83,7 @@ public class Simulation {
         }
     }
 
-
+    //removes a students that has been served or sends him to his next order counter
     private void finishServices(){
         for(Counter counter: queueManager.getAllCounters()){
             Order done = counter.workOneMinute(); //returns null if order is not finished

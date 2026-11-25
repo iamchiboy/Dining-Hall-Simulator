@@ -36,8 +36,6 @@ public class Student {
 
 
     //a student can place an order
-    // this method takes the item in key value pair i.e the MenuItem and quantity
-    // this is where the Order object is created
     public Order placeOrder(Map<MenuItem, Integer> items){
         String orderId = "ORD-" + studentId;
         return new Order(orderId,this, items);
