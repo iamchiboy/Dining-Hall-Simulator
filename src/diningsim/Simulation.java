@@ -104,8 +104,25 @@ public class Simulation {
 
         }
 
-
     }
+
+
+    public int getClock(){return clock};
+
+    public int getTotalStudentsServed(){return totalStudentsServed};
+
+    public int getQueueLength(String type){
+        return queueManager.getQueueLength(type);
+    }
+
+    public double getOverallAverageWaitingTime(){
+        return queueManager.getOverallAverageWaititngTime();
+    }
+
+    public double getAverageWaitingTime(String type){
+        return queueManager.getCounter(type).calculateAverageWaitingTime();
+    }
+
 
 
 
