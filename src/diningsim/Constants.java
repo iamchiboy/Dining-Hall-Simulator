@@ -25,4 +25,8 @@ public static final int PASTRIES_RATE = 2;
     //The quantity a student can pick from one item.
 public static final int MIN_QUANTITY = 1;
 public static final int MAX_QUANTITY = 10;  
+
+//Stdent ID format
+public static final String STUDENT_ID_PREFIX = "STU-";
+public static final int STUDENT_ID_DIGITS = 8;
 }
