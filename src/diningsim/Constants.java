@@ -12,5 +12,8 @@ public class Constants {
     public static final String PASTRIES = "Pastries";
 
     //An array to hold ther three counter names. It helps when we will want to loop thriugh each counter.
-public static final String[] CATEGORIES = { MEALS, DRINKS, PASTRIES };    
+public static final String[] CATEGORIES = { MEALS, DRINKS, PASTRIES }; 
+
+//How long a minute lasts on the creen in miliseconds.
+public static final int TICK_MILLIS = 1000;
 }
