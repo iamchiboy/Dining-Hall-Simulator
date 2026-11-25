@@ -12,4 +12,11 @@ public class MenuItem {
   private double price;      
   private String category; 
   
+  // Constructor
+    public MenuItem(String itemId, String name, double price, String category) {
+        this.itemId = itemId;
+        this.name = name;
+        this.price = price;
+        this.category = category;
+    }
 }
