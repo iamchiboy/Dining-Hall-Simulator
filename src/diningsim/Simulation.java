@@ -31,17 +31,15 @@ public class Simulation {
 
     }
 
-    //method to start the simulation
+
     public void startSimulation(){
         simulationRunning = true;
     }
 
-    //stop simulation
     public void stopSimulation(){
         simulationRunning = false;
     }
 
-    //check simulation status
     public boolean isRunning(){
         return simulationRunning;
     }
@@ -52,9 +50,7 @@ public class Simulation {
         if( studentName == null || studentName.isEmpty()){
             throw new IllegalArgumentException("Student Name is required");}
         Student student = new Student(studentId, studentName.trim());
-
         Order order = student.placeOrder(items);
-        //submitOrder
         submitOrder(order);
         return order;
 
@@ -63,12 +59,9 @@ public class Simulation {
 
     public void submitOrder(Order order){
         String id = order.getStudent().getStudentId();
-
-        //students with unfinished orders can not order again unless when done
         if(activeStudentIds.contains(id)){
             throw new IllegalArgumentException("Student" + id + " already has an order\n" +
                     "in a queue. Wait until it is finished.");}
-
         //puts an order at the back of the queue of the counter it needs now
         queueManager.routeOrder(order, clock);
         activeStudentIds.add(id);
@@ -90,7 +83,7 @@ public class Simulation {
         }
     }
 
-    //
+
     private void finishServices(){
         for(Counter counter: queueManager.getAllCounters()){
             Order done = counter.workOneMinute(); //returns null if order is not finished
@@ -101,15 +94,13 @@ public class Simulation {
                 activeStudentIds.remove(done.getStudent().getStudentId());
 
             }
-
         }
-
     }
 
 
-    public int getClock(){return clock};
+    public int getClock(){return clock;};
 
-    public int getTotalStudentsServed(){return totalStudentsServed};
+    public int getTotalStudentsServed(){return totalStudentsServed;};
 
     public int getQueueLength(String type){
         return queueManager.getQueueLength(type);
@@ -123,6 +114,24 @@ public class Simulation {
         return queueManager.getCounter(type).calculateAverageWaitingTime();
     }
 
+    //builds the statistics reports
+    public String getSummaryReport(){
+        StringBuilder report = new StringBuilder();
+        report.append("Simulated time: ").append(clock).append(" min\n");
+        report.append("Students served: ").append(totalStudentsServed).append("\n");
+
+        for (Counter counter: queueManager.getAllCounters()){
+            report.append(counter.getType())
+                    .append(" - Avg wait: ")
+                    .append(String.format("%.1f", counter.calculateAverageWaitingTime()))
+                    .append(" min, Queue length: ")
+                    .append(counter.getQueueLength())
+                    .append("\n");
+        }
+
+        report.append(String.format("Overall average wait: %.1f min", getOverallAverageWaitingTime()));
+        return report.toString();
+    }
 
 
 
