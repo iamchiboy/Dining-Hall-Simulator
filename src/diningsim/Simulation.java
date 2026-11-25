@@ -47,7 +47,7 @@ public class Simulation {
 
     //creates the student object and performs the order
     public Order placeOrderFor(String studentName, String studentId, Map<MenuItem, Integer> items){
-        if( studentName == null || studentName.isEmpty()){
+        if( studentName == null || studentName.isBlank()){
             throw new IllegalArgumentException("Student Name is required");}
         Student student = new Student(studentId, studentName.trim());
         Order order = student.placeOrder(items);
