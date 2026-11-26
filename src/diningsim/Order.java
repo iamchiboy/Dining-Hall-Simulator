@@ -32,6 +32,15 @@ public Order (String orderId, Student student, Map<MenuItem, Integer> items){
  if(items == null || items.isEmpty()){
     throw new IllegalArgumentException("Order must contain at least one item");
  }  
+ //ensuring every quantity must be between 1 and 10.
+ for(int quantity : items.values()){
+    if(quantity < Constants.MIN_QUANTITY  || quantity > Constants.MAX_QUANTITY){
+        throw new IllegalArgumentException("Quantity for each item must be between 1 and 10");
+    }
+ }
+
+ 
+
  
  
  
