@@ -39,7 +39,19 @@ public Order (String orderId, Student student, Map<MenuItem, Integer> items){
     }
  }
 
- 
+ //Stores the values
+this.orderId = orderId;
+this.student = student;
+
+// we make our own copy of the items, so that nobody can change the item latter.
+this.items = new LinkedHashMap<>(items); // LinkedHashMap to remember the order items were added.
+this.counterSequence = new ArrayList<>(); // Create a new list to hold the counter sequence.
+this.currentCounterIndex = 0; // Start at the first counter in the sequence.
+this.enqueueTime = 0; // Initialize enqueue time to 0. It will be set when the order is added to the queue.
+
+ // work out which counter to visit
+ buildCounterSequence();
+}
 
  
  
