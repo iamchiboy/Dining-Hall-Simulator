@@ -24,3 +24,14 @@ private Map<MenuItem, Integer> items; // store pairs. For example item and quant
 private List<String> counterSequence; // List of countr names in the order they will be visited.
 private int currentCounterIndex; // The position in the counterSequence list that the student is at now. 
 private int enqueueTime; // The time the student was added to the queue. Used to work out the waiting time.
+
+// Constructor; to run when a new order is created.
+public Order (String orderId, Student student, Map<MenuItem, Integer> items){
+    
+ // to ensure the order must have one item.
+ if(items == null || items.isEmpty()){
+    throw new IllegalArgumentException("Order must contain at least one item");
+ }  
+ 
+ 
+ 
