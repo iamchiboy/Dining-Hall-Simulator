@@ -58,8 +58,26 @@ this.enqueueTime = 0; // Initialize enqueue time to 0. It will be set when the o
  public void buildCounterSequence(){
     counterSequence.clear();//start with an emty list.
 
-    //Go through e
+    //Go through every item, in the order they were ticked.
+    for (MenuItem : items.keySet()){
+        String category = item.getCategory();
+
+        //Only add the category if it is not in the list yet.
+        if(!counterSequence.contains(category)){
+            counterSequence.add(category)
+        }
  }
+}
+
+//Returns the counter the student must go to now 
+// returns null when all counters are finished.
+public String getCurrentCounterType() {
+    if (isCompleted()){
+        return null;
+    }
+    return counterSequence.get(currentCounterIndex);
+}
+}
 }
 
  
