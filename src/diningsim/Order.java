@@ -51,6 +51,15 @@ this.enqueueTime = 0; // Initialize enqueue time to 0. It will be set when the o
 
  // work out which counter to visit
  buildCounterSequence();
+
+ //Fills the counterSequence with each category once,
+ //in the order the catogories first apear in the ticked items.
+ // For example, if the order has a meal and a drink, the counterSequence will be ["Meals", "Drinks"].
+ public void buildCounterSequence(){
+    counterSequence.clear();//start with an emty list.
+
+    //Go through e
+ }
 }
 
  
