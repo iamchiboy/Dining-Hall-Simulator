@@ -136,7 +136,10 @@ public String getOrderId(){
 public Student getStudent(){
     return student;
 }
-
+//returns a read-only view of all items and quantities
+public Map<MenuItem, Integer> getItems(){
+    return Collections.unmodifiableMap(items);
+}
 
 
 
