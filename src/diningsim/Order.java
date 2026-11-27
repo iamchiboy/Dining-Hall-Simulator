@@ -105,6 +105,16 @@ total = total + quantity;
 }
 return total;
 }
+}
+
+//moves the order on to the next visit in its sequence
+public void advanceToNextCounter(){
+    if (!isCompleted());{
+        currentCounterIndex = currentCounterIndex + 1;
+    }
+    }
+
+
 
 
 
