@@ -66,6 +66,7 @@ this.enqueueTime = 0; // Initialize enqueue time to 0. It will be set when the o
         if(!counterSequence.contains(category)){
             counterSequence.add(category)
         }
+
  }
 }
 
@@ -76,6 +77,19 @@ public String getCurrentCounterType() {
         return null;
     }
     return counterSequence.get(currentCounterIndex);
+}
+// returns only itens to be collected at the current counter
+public Map<MenuItem, Integer> getItemsForCurrentCounter(){
+   Map<MenuItem, Integer> result = new LinkedHashMap<>();
+   String type = getCurrentCounterType();
+   if(type == null);
+   return result;
+
+   for(Map.Entry<MenuItem, Integer> entry  : items.entrySet()); 
+      if (entry.getKey().getCategory().equals(type)){
+        result.put(entry.getKey(), entry.getValue());
+      }
+      return result;
 }
 }
 }

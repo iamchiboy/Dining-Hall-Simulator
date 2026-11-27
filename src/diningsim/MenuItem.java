@@ -51,6 +51,7 @@ public void setPrice(double price) {
         return price * quantity;
     } 
 
+    @Override 
     public String toString() {
         return name + " (" + category + ")";
     }
