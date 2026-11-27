@@ -25,13 +25,15 @@ private List<String> counterSequence; // List of countr names in the order they 
 private int currentCounterIndex; // The position in the counterSequence list that the student is at now. 
 private int enqueueTime; // The time the student was added to the queue. Used to work out the waiting time.
 
+
 // Constructor; to run when a new order is created.
 public Order (String orderId, Student student, Map<MenuItem, Integer> items){
     
  // to ensure the order must have one item.
  if(items == null || items.isEmpty()){
     throw new IllegalArgumentException("Order must contain at least one item");
- }  
+ } 
+
  //ensuring every quantity must be between 1 and 10.
  for(int quantity : items.values()){
     if(quantity < Constants.MIN_QUANTITY  || quantity > Constants.MAX_QUANTITY){
@@ -51,6 +53,7 @@ this.enqueueTime = 0; // Initialize enqueue time to 0. It will be set when the o
 
  // work out which counter to visit
  buildCounterSequence();
+}
 
  //Fills the counterSequence with each category once,
  //in the order the catogories first apear in the ticked items.
@@ -61,14 +64,13 @@ this.enqueueTime = 0; // Initialize enqueue time to 0. It will be set when the o
     //Go through every item, in the order they were ticked.
     for (MenuItem : items.keySet()){
         String category = item.getCategory();
-
+    }
         //Only add the category if it is not in the list yet.
         if(!counterSequence.contains(category)){
             counterSequence.add(category)
         }
-
  }
-}
+
 
 //Returns the counter the student must go to now 
 // returns null when all counters are finished.
@@ -82,17 +84,30 @@ public String getCurrentCounterType() {
 public Map<MenuItem, Integer> getItemsForCurrentCounter(){
    Map<MenuItem, Integer> result = new LinkedHashMap<>();
    String type = getCurrentCounterType();
-   if(type == null);
+   if(type == null);{
+   }
    return result;
 
-   for(Map.Entry<MenuItem, Integer> entry  : items.entrySet()); 
+   for(Map.Entry<MenuItem, Integer> entry  : items.entrySet()); {
       if (entry.getKey().getCategory().equals(type)){
         result.put(entry.getKey(), entry.getValue());
       }
       return result;
+    }
 }
+
+
+//returns how many pieces are collected at the current counter
+public int getTotalQuantityForCurrentCounter(){
+int total = 0;
+for(int quantity : getItemsForCurrentCounter().values()){
+total = total + quantity;
 }
+return total;
 }
+
+
+
 
  
  
