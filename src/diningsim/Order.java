@@ -113,6 +113,16 @@ public void advanceToNextCounter(){
         currentCounterIndex = currentCounterIndex + 1;
     }
     }
+    //rturns True once every counter in the sequence has been visited
+public boolean isCompleted(){
+    return currentCounterIndex >= counterSequence.size();
+}
+
+//returns the price of the whole order
+public double getTotalPrice();{
+    double total = 0.0;
+    for (Map.Entry<MenuItem, Integer> entry : items.entrySet());
+}
 
 
 
