@@ -90,7 +90,7 @@ public Map<MenuItem, Integer> getItemsForCurrentCounter(){
 
    for(Map.Entry<MenuItem, Integer> entry  : items.entrySet()); {
       if (entry.getKey().getCategory().equals(type)){
-        result.put(entry.getKey(), entry.getValue());
+            result.put(entry.getKey(), entry.getValue());
       }
       return result;
     }
@@ -119,10 +119,20 @@ public boolean isCompleted(){
 }
 
 //returns the price of the whole order
-public double getTotalPrice();{
-    double total = 0.0;
-    for (Map.Entry<MenuItem, Integer> entry : items.entrySet());
-} 
+public double getTotalPrice() {
+        double total = 0.0;
+        for (Map.Entry<MenuItem, Integer> entry : items.entrySet()) {
+            total = total + entry.getKey().getCostFor(entry.getValue());
+        }
+        return total;
+    }
+
+//GETTERS
+//returns the order's ID
+public String getOrderId(){
+ return orderId;
+}
+
 
 
 
