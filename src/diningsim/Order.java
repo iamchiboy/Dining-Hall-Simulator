@@ -128,10 +128,18 @@ public double getTotalPrice() {
     }
 
 //GETTERS
-//returns the order's ID
+
 public String getOrderId(){
  return orderId;
 }
+
+public Student getStudent(){
+    return student;
+}
+
+
+
+
 
 
 
