@@ -149,6 +149,10 @@ public int getEnqueueTime(){
     return enqueueTime;
 }
 
+public void setEnqueueTime(int time){
+    this.enqueueTime = time;
+}
+
 
 
 
