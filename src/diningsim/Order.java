@@ -140,6 +140,14 @@ public Student getStudent(){
 public Map<MenuItem, Integer> getItems(){
     return Collections.unmodifiableMap(items);
 }
+//returns a read-only list of the counters this order will visit, in order
+public List<String> getCounterSequence(){
+
+}
+
+public int getEnqueueTime(){
+    return enqueueTime;
+}
 
 
 
