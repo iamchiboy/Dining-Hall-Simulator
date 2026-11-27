@@ -122,7 +122,7 @@ public boolean isCompleted(){
 public double getTotalPrice();{
     double total = 0.0;
     for (Map.Entry<MenuItem, Integer> entry : items.entrySet());
-}
+} 
 
 
 
